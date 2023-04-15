@@ -26,9 +26,9 @@ In this work we experiment with imputation in each one of the above approaches i
 
 
 # Results - summary
-First, we drop a significant amount (~50%) of the non-zero elements in the original matrix, and reserve them as a test set. The resulting - further sparse - matrix is then used as the training set. After training the network with the training matrix we recieve the imputed result matrix. We then perform both quantative and qualitative analysis on the result.
+First, we drop a significant amount (~50%) of the non-zero elements in the original matrix, and reserve them as a test set. The resulting - further sparse - matrix is then used as the training set. After training the network with the training matrix we recieve the imputed result matrix. We then perform both quantitative and qualitative analysis on the result.
 
-For quantative analysis we compare the original dropped values with the same indices in the result matrix, and measure the RMSE. See the table below.
+For quantitative analysis we compare the original dropped values with the same indices in the result matrix, and measure the RMSE. See the table below.
 
 <img src="/multi-modal-imputation-spatial-gene-expression/figures/for_pages_2.jpg" width="400">
 
@@ -37,7 +37,7 @@ For qualitative analysis we perform cell-type clustering on three different matr
 <img src="/multi-modal-imputation-spatial-gene-expression/figures/for_pages_3.jpg" width="800">
 
 # Discussion - summary
-Viewing the quantative results in the above table as well as the qualitative results in the above plot, we see a few points worth mentioning:
+Viewing the quantitative results in the above table as well as the qualitative results in the above plot, we see a few points worth mentioning:
 - All of the models overfit to a certain extent.
 - The supervised models (positional and spot image) show better RMSE results than the autoencoder both in terms of test results and in terms of less overfitting.
 - The multi modal approach achieves slightly better RMSE results than the autoencoder but less impressive results than the other networks.
