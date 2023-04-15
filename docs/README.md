@@ -26,12 +26,14 @@ In this work we experiment with imputation in each one of the above approaches i
 
 
 # Results - summary
-First, we drop a significant amount (~50%) of the non-zero elements in the original matrix, and reserve them as a test set. The resulting - further sparse - matrix is then used as the training set. After training the network with the training matrix we recieve the imputed result matrix. 
+First, we drop a significant amount (~50%) of the non-zero elements in the original matrix, and reserve them as a test set. The resulting - further sparse - matrix is then used as the training set. After training the network with the training matrix we recieve the imputed result matrix. We then perform both quantative and qualitative analysis on the result.
 
 For quantative analysis we compare the original dropped values with the same indices in the result matrix, and measure the RMSE. See the table below.
-For qualitative analysis we perform cell-type clustering on three different matrices: the original matrix, the post-dropout training set matrix, and the output imputed matrix. In successful efforts we expect to see that the resulting cluster distribution on the imputed matrix has a similar pattern as the original - predropout matrix. See figure below.
 
 <img src="/multi-modal-imputation-spatial-gene-expression/figures/for_pages_2.jpg" width="400">
+
+
+For qualitative analysis we perform cell-type clustering on three different matrices: the original matrix, the post-dropout training set matrix, and the output imputed matrix. In successful efforts we expect to see that the resulting cluster distribution on the imputed matrix has a similar pattern as the original - predropout matrix. See figure below.
 <img src="/multi-modal-imputation-spatial-gene-expression/figures/for_pages_3.jpg" width="800">
 
 # Discussion - summary
