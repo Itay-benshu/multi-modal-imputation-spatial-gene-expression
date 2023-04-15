@@ -1,5 +1,6 @@
 # Imputation of Spatial Gene Expression with a Multi Modality Deep Learning Network
 Final project submission for MSC in Machine Learning / Data Science, Reichman University. 
+
 Submitted by: Itay Ben Shushan. Supervised by: Leon Anavy.
 
 # Brief Background
@@ -7,9 +8,11 @@ Spatial RNA Sequencing is a recent advance in RNA sequencing, which performs a s
 
 In some databases, the output of the Spatial RNA-seq also includes a high resolution image of the analyzed slice after it underwent histological staining. Each spot is then associated with a specific X,Y pixel coordinates on the image.
 
-Due to restrictions of the methods in both scRNA-Seq and Spatial RNA-Seq (which stem from having a very small cell-count for the sequencing process) the output matrix contains a significant amount of zeros which don't always indicate biologically-true absence of expression, but rather some are a cause of methodological noise. This sparsity imposes difficulties on downstream analysis' of the sequencing data, and performing some form of imputation on single cell transcription data is a frequent practice.
+The image below shows a sample slice on the left, and the spot positions outlined on top of the slice on the right.
 
-![Slice Image](/multi-modal-imputation-spatial-gene-expression/docs/figures/for_pages_1.jpg)
+![Slice Image](/docs/figures/for_pages_1.jpg)
+
+Due to restrictions of the methods in both scRNA-Seq and Spatial RNA-Seq (which stem from having a very small cell-count for the sequencing process) the output matrix contains a significant amount of zeros which don't always indicate biologically-true absence of expression, but rather some are a cause of methodological noise. This sparsity imposes difficulties on downstream analysis' of the sequencing data, and performing some form of imputation on single cell transcription data is a frequent practice.
 
 # Goal
 The goal of this work is to utilize information available in Spatial RNA Sequencing to perform imputation of the gene-count matrix. Specifically, we intend to utilize three modalities to perform an imputed reconstruction of the gene-count matrix:
@@ -19,7 +22,7 @@ The goal of this work is to utilize information available in Spatial RNA Sequenc
 
 In this work we experiment with imputation in each one of the above approaches individually, and then present a network which uses all modalities in a unified architecture.
 
---- NETWORK IMAGE ---
+![Network image](/docs/figures/networkarch2.png)
 
 
 # Results - summary
@@ -28,8 +31,8 @@ First, we drop a significant amount (~50%) of the non-zero elements in the origi
 For quantative analysis we compare the original dropped values with the same indices in the result matrix, and measure the RMSE. See the table below.
 For qualitative analysis we perform cell-type clustering on three different matrices: the original matrix, the post-dropout training set matrix, and the output imputed matrix. In successful efforts we expect to see that the resulting cluster distribution on the imputed matrix has a similar pattern as the original - predropout matrix. See figure below.
 
--- RESULT TABLE --
--- RESULT GRAPH --
+![Quantative results Image](/docs/figures/for_pages_2.jpg)
+![Qualitative results Image](/docs/figures/for_pages_3.jpg)
 
 # Discussion - summary
 Viewing the quantative results in the above table as well as the qualitative results in the above plot, we see a few points worth mentioning:
